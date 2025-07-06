@@ -1,5 +1,23 @@
 
-```Nix
+### With `flake.nix`, you get:
+
+- `nix develop`: spins up your dev environment (replaces `shell.nix`)
+- `nix build`: builds your package
+- `nix run`: launches your binary if defined in `apps`
+- Reproducibility & remote sharing (via GitHub URLs, pinning, etc.)
+
+So yes—**if your `flake.nix` is well-structured, you don’t need `shell.nix` anymore**.
+
+---
+
+### 🔙 When `shell.nix` might still be useful
+
+Only in a few niche cases:
+- You're working with tools or environments that don’t yet support flakes
+- You’re onboarding someone who hasn’t enabled flake support yet
+- You want to keep a fallback for non-flake `nix-shell` users
+
+```
     { pkgs ? import <nixpkgs> {} }:
       pkgs.mkShell {
         nativeBuildInputs = with pkgs; [
