@@ -27,6 +27,10 @@
         cp quad $out/bin/
       '';
     };
+    apps.${system}.default = {
+      type = "app";
+      program = "${self.packages.${system}.quad}/bin/quad";
+    };
 
     # For local dev environment like your shell.nix
     devShells.${system}.default = pkgs.mkShell {
