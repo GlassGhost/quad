@@ -8,7 +8,15 @@
 
 So yes—**if your `flake.nix` is well-structured, you don’t need `shell.nix` anymore**.
 
----
+[Ultimate Nix Flakes Guide - Vimjoyer](https://youtu.be/JCeYq72Sko0)
+
+```
+nix develop --no-warn-dirty
+nix build
+./result/bin/quad
+```
+
+______________________________________________________________________
 
 ### 🔙 When `shell.nix` might still be useful
 
